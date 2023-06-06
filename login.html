@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="C:/microcoin/media/favicon.png">
+    <title>Microcoin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background-color: #23272A;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid #7289DA;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #2C2F33;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            background: -webkit-linear-gradient(45deg, #3f87a6, #ebf8e1, #f69d3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #loginButton {
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        #signinButton {
+            background-color: #FF4500;
+            color: white;
+        }
+
+        #signinButton:hover {
+            background-color: #FF6347;
+        }
+
+        #loginButton:hover {
+            background-color: #6495ED;
+        }
+    </style>
+</head>
+<body>
+    <h1>Micro Coin</h1>
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit" id="loginButton">Log in</button>
+        <button onclick="location.href='registration.html'" type="button" id="signinButton">Sign in</button>
+    </div>
+	<script src="C:/microcoin/scripts/login.js"></script>
+</body>
+</html>

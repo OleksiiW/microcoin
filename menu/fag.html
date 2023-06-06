@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="C:/microcoin/media/favicon.png">
+    <title>Microcoin FAQ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background-color: #23272A;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .faq-block {
+            margin: 10px;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            background-color: #2C2F33;
+            color: #FFD700;
+            cursor: pointer;
+            padding: 20px;
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .faq-block p {
+            display: none;
+            color: #1E90FF;
+        }
+
+        .faq-block.active {
+            color: #1E90FF;
+            background-color: #000;
+        }
+
+        .faq-block.active p {
+            display: block;
+        }
+
+        #backButton {
+            background-color: #FFD700;
+            color: #000;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        #backButton:hover {
+            background-color: #FFA500;
+        }
+    </style>
+    <script>
+        function toggleAnswer(element) {
+            element.classList.toggle("active");
+        }
+        
+        function goBack() {
+            location.href='C:/microcoin/home_user.html';
+        }
+    </script>
+</head>
+<body>
+	<button id="backButton" onclick="goBack()">Go Back</button>
+    <h1>Micro Coin FAQ</h1>
+    
+    <div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What documents do I need to get a microloan?</h2>
+        <p>You only need a passport to get a microloan.</p>
+    </div>
+
+    <div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>How can I register in the system?</h2>
+        <p>You can register in the system by visiting C:/microcoin/login.html or in the 'Cabinet' section in the menu.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What are the data requirements for registration?</h2>
+        <p>The data requirements will be specified during the registration process.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>How is my creditworthiness determined?</h2>
+        <p>Your creditworthiness is based on data from the Central Bank, which in turn looks at your income level and credit history.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>How can I get a loan?</h2>
+        <p>To get a loan, you need to register in the system and click on the big red button in the main menu.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What is the maximum amount of loan that I can get?</h2>
+        <p>The maximum amount is 517 000 hrn, but this can change and is not fixed.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What is the minimum amount of loan that I can get?</h2>
+        <p>The minimum amount is 100 hrn now, but this can change and is not fixed.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What is the repayment term?</h2>
+        <p>The maximum repayment term is one year, with interest accrued monthly.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What are the interest rates applied to loans?</h2>
+        <p>The interest rate is 30% per month.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>How can I repay the loan?</h2>
+        <p>You can make partial payments or pay the entire amount at once. Payment details can be found in the appropriate menu item.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>Can I repay the loan early?</h2>
+        <p>Yes, you can.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>Will there be a penalty for early repayment of the loan?</h2>
+        <p>If the loan month has started, it is fully charged.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>Are there any hidden fees or commissions in the system?</h2>
+        <p>We cover all commission fees.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What happens if I can't repay the loan on time?</h2>
+        <p>We will call you and try to resolve this issue with you. Unwillingness to cooperate may lead to court proceedings.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>How can I change my registration data?</h2>
+        <p>Yes, you can change your registration data, but you need to contact us at admin.micro.coin@gmail.com.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What can I do if I have problems with receiving or repaying the loan?</h2>
+        <p>You can reach us at +380567434856 or admin.micro.coin@gmail.com.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>What guarantees are there for the security of my data?</h2>
+        <p>Your data is securely encrypted. In accordance with Ukrainian laws, we provide data on the microloan to the Central Bank.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>Can I open multiple loans at the same time?</h2>
+        <p>Yes, you can.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>Can I register if I'm not a citizen of Ukraine?</h2>
+        <p>Yes, you can.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>Do you have a mobile application for more convenient lending?</h2>
+        <p>At the moment, it is in development.</p>
+    </div>
+	
+	<div class="faq-block" onclick="toggleAnswer(this)">
+        <h2>How can I contact the support service?</h2>
+        <p>You can contact us at +380567434856 or admin.micro.coin@gmail.com.</p>
+    </div>
+
+</body>
+</html>

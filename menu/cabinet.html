@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="C:/microcoin/media/favicon.png">
+    <title>Microcoin Cabinet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400;1,700&family=Open+Sans:wght@300;400;700&display=swap');
+
+        body {
+            background-color: #2C2F33;
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            color: #F8F8F2;
+        }
+
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border: 1px solid #FF6347;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #23272A;
+            position: relative;
+        }
+
+        h1 {
+            color: #FF6347;
+            padding: 20px;
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #FF6347;
+            font-family: 'Merriweather', serif;
+        }
+
+        p {
+            color: #F8F8F2;
+            font-size: 1.2em;
+        }
+
+        .info-block {
+            margin: 20px;
+            padding: 10px;
+            background-color: #2C2F33;
+            border-radius: 5px;
+        }
+
+        .contact-info {
+            margin: 20px;
+            padding: 10px;
+            color: #F8F8F2;
+            font-size: 1.0em;
+        }
+
+        #backButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2em;
+            color: #FF6347;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a id="backButton" href="C:/microcoin/home_user.html">&#x2190;</a>
+        <h1>Micro Coin Cabinet</h1>
+    </div>
+    <div class="container">
+        <div class="info-block">
+			<h2>User Information</h2>
+			<p><strong style="color: #0084ff;">Login:</strong> <span id="login">No data available</span></p>
+			<p><strong style="color: #0084ff;">Full Name:</strong> <span id="full_name">No data available</span></p>
+			<p><strong style="color: #0084ff;">Passport Number:</strong> <span id="passport_number">No data available</span></p>
+			<p><strong style="color: #0084ff;">Card Number:</strong> <span id="card_number">No data available</span></p>
+		</div>
+
+		<div class="info-block">
+			<h2>About User</h2>
+			<p><strong style="color: #0084ff;">Date Of Birth:</strong> <span id="date_of_birth">No data available</span></p>
+			<p><strong style="color: #0084ff;">Credit History:</strong> <span id="credit_history">No data available</span></p>
+			<p><strong style="color: #0084ff;">Email:</strong> <span id="email">No data available</span></p>
+			<p><strong style="color: #0084ff;">Phone Number:</strong> <span id="phone_number">No data available</span></p>
+		</div>
+
+        <div class="contact-info">
+            <p>To delete your account or change the account details, please contact us at admin.micro.coin@gmail.com, clearly specifying what you want to change.</p>
+            <p>Contact Phone: +380567434856, we are available Mon-Fri from 9:00 to 16:00.</p>
+        </div>
+    </div>
+	<script src="C:/microcoin/scripts/user_data.js"></script>
+</body>
+</html>

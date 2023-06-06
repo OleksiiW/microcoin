@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="C:/microcoin/media/favicon.png">
+    <title>Microcoin Admin - Change User Data</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background-color: #23272A;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border: 1px solid #7289DA;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #2C2F33;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            padding: 20px;
+            font-size: 2.5em;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        input[type=text], input[type=number], input[type=email], input[type=tel] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #6495ED;
+        }
+    </style>
+</head>
+<body>
+    <h1>Change User Data</h1>
+    <div class="container">
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" placeholder="Enter user ID" required>
+
+        <label for="login">Login</label>
+        <input type="text" id="login" placeholder="Enter Login" required>
+
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter Full Name" required>
+
+        <label for="passportNumber">Passport Number</label>
+        <input type="text" id="passportNumber" placeholder="Enter Passport Number" required>
+
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" placeholder="Enter Card Number" required>
+
+        <label for="dob">Date Of Birth</label>
+        <input type="text" id="dob" placeholder="YYYY-MM-DD" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter Email" required>
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" placeholder="Enter Phone Number" required>
+
+        <button type="submit" id="changeButton">Change A User Data</button>
+    </div>
+	<script src="C:/microcoin/scripts/change.js"></script>
+</body>
+</html>
+

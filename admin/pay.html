@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="C:/microcoin/media/favicon.png">
+    <title>Admin Pay</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background-color: #23272A;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid #7289DA;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #2C2F33;
+        }
+
+        input[type=text], input[type=number] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 45%;
+            padding: 14px 20px;
+            margin: 8px 2%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #payButton {
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        #deleteButton {
+            background-color: #FF4500;
+            color: white;
+        }
+
+        #deleteButton:hover {
+            background-color: #FF6347;
+        }
+
+        #payButton:hover {
+            background-color: #6495ED;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="loanId"><b>Loan ID</b></label>
+        <input type="text" placeholder="Enter loan id" id="loanId" required>
+
+        <div>
+            <label for="amount"><b>Amount:</b></label>
+            <input type="number" placeholder="0 hrn" id="amount" required>
+        </div>
+
+        <button type="submit" id="payButton">Pay off</button>
+        <button type="submit" id="deleteButton">Delete</button>
+    </div>
+	<script src="C:/microcoin/scripts/pay.js"></script>
+	<script src="C:/microcoin/scripts/delete_record.js"></script>
+</body>
+</html>

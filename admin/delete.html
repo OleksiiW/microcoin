@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="C:/microcoin/media/favicon.png">
+    <title>Microcoin Administrator Delete User</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background-color: #23272A;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid #7289DA;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #2C2F33;
+        }
+
+        h1 {
+            color: #FF4500;
+            padding: 20px;
+            font-size: 2.5em;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #aboutUserButton {
+            background-color: #FFA500;
+            color: white;
+        }
+
+        #aboutUserButton:hover {
+            background-color: #FF6347;
+        }
+
+        #deleteButton {
+            background-color: #FF4500;
+            color: white;
+            display: none;
+        }
+
+        #deleteButton:hover {
+            background-color: #FF6347;
+        }
+
+        .hiddenUserInfo {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1><i>Administrator Delete User</i></h1>
+    <div class="container">
+        <label for="userID"><b>User ID</b></label>
+        <input type="text" placeholder="Enter User ID" id="userID" required>
+
+        <button id="aboutUserButton">About User</button>
+        <button id="deleteButton">Delete</button>
+
+        <div class="hiddenUserInfo">
+            <label for="login">Login:</label>
+            <span id="login"> </span><br>
+
+            <label for="fullName">Full Name:</label>
+            <span id="fullName"> </span><br>
+
+            <label for="passportNumber">Passport Number:</label>
+            <span id="passportNumber"> </span><br>
+
+            <label for="cardNumber">Card Number:</label>
+            <span id="cardNumber"> </span><br>
+
+            <label for="dob">Date Of Birth:</label>
+            <span id="dob"> </span><br>
+
+            <label for="email">Email:</label>
+            <span id="email"> </span><br>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <span id="phoneNumber"> </span><br>
+        </div>
+    </div>
+	<script src="C:/microcoin/scripts/delete_user.js"></script>
+</body>
+</html>

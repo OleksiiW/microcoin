@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="C:/microcoin/media/favicon.png">
+    <title>Microcoin Menu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Playfair+Display:ital,wght@1,500&display=swap');
+
+        body {
+            background-image: url("C:/microcoin/media/coins.jpg");
+            background-size: cover;
+            background-color: rgba(0,0,0,0.7);
+            background-blend-mode: multiply;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .nav a {
+            color: #FFD700;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px darkgoldenrod;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .highlighted-text {
+            background: linear-gradient(45deg, #ffd700, #ffa500, #ff4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.5em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            color: white;
+            background: linear-gradient(to right, #ff4500, #ff6347);
+            padding: 15px 30px;
+            margin-top: 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+            font-weight: bold;
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.7), 0 0 5px rgba(255,70,70,0.7);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="C:/microcoin/menu/cabinet.html">Cabinet</a>
+        <a href="C:/microcoin/menu/loans.html">My loans</a>
+        <a href="C:/microcoin/menu/details.html">Pay the debts</a>
+        <a href="C:/microcoin/menu/fag.html">FAQ</a>
+		<a id="exitLink" href="C:/microcoin/login.html">Exit</a>
+    </nav>
+    <div class="main-content">
+        <div class="highlighted-text">
+            <h1><i>Join the Global Community Embracing Quick Loans!</i></h1>
+            <p><i>Navigate Your Finances, Power Through Challenges, and Repay Swiftly - It's Easier Than You Think!</i></p>
+        </div>
+        <a href="C:/microcoin/take_loan.html" class="cta-button">Join the Bold, Get Your Instant Microloan Right Now!</a>
+    </div>
+	<script>
+	  document.getElementById('exitLink').addEventListener('click', function() {
+		localStorage.removeItem('jwtToken');
+		localStorage.removeItem('userId');
+	  });
+	</script>
+</body>
+</html>
