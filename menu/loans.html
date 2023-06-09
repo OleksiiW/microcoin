@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Microcoin Service - Loans</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background-color: #23272A;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 1px solid #7289DA;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #2C2F33;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            padding: 20px;
+            font-size: 2.5em;
+        }
+		
+		.loan-container {
+			margin-bottom: 20px;
+			padding: 20px;
+			border: 1px solid #7289DA;
+			border-radius: 5px;
+			cursor: pointer; 
+		}
+
+        .loan-container > p {
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Micro Coin - Your Loan(-s)</h1>
+    <div class="container" id="loanList">
+        
+    </div>
+	<script>
+		window.onload = function () {
+			const jwtToken = localStorage.getItem('jwtToken');
+			const userId = localStorage.getItem('userId');
+
+			if (jwtToken === null || userId === null) {
+				alert("Session timed out, please log in again");
+				window.location.href = "C:/microcoin/login.html";
+				return;
+			}
+
+			fetch(`http://127.0.0.1:5000/user/loan/${userId}`, {
+				method: 'GET',
+				headers: {
+					'Authorization': `Bearer ${jwtToken}`,
+					'Content-Type': 'application/json'
+				},
+			})
+			.then(response => {
+				if (!response.ok) {
+					throw response.status;
+				}
+				return response.json();
+			})
+			.then(data => {
+				if (data.loans.length === 0) {
+					alert("No loans found for this user.");
+					return;
+				}
+
+				data.loans.forEach((loan, index) => {
+					const loanContainer = document.createElement('div');
+					loanContainer.classList.add('loan-container');
+					loanContainer.id = `loan${index + 1}`;
+					loanContainer.onclick = function() { window.location.href = 'C:/microcoin/menu/details.html'; }
+
+					const loanId = document.createElement('p');
+					loanId.innerHTML = `<strong>Loan ID:</strong> <span>${loan.loan_id}</span>`;
+					const debt = document.createElement('p');
+					debt.innerHTML = `<strong>Debt:</strong> <span>${loan.debt}</span>`;
+					const date = document.createElement('p');
+					date.innerHTML = `<strong>Date:</strong> <span>${loan.date}</span>`;
+
+					loanContainer.appendChild(loanId);
+					loanContainer.appendChild(debt);
+					loanContainer.appendChild(date);
+
+					document.getElementById('loanList').appendChild(loanContainer);
+				});
+
+			})
+			.catch(error => {
+				if (error === 404) {
+					alert("User not found.");
+				} else if (error === 401) {
+					alert("Session timed out, please log in again");
+					localStorage.removeItem('jwtToken');
+					localStorage.removeItem('userId');
+					window.location.href = "C:/microcoin/login.html";
+				} else {
+					alert("An unknown error occurred.");
+				}
+			});
+		};
+	</script>
+</body>
+</html>

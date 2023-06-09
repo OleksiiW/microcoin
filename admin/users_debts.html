@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Microcoin Admin - User Debts</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background-color: #23272A;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid #7289DA;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #2C2F33;
+        }
+
+        h1, h2 {
+            color: #FFFFFF;
+            padding: 20px;
+            font-size: 2.5em;
+        }
+
+        .loan-item {
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Micro Coin - User Debts</h1>
+    <div class="container">
+        <div id="bankReserve">Bank reserve data will be fetched here</div>
+        <h2>All Loans</h2>
+        <div id="loansContainer"></div>
+    </div>
+	<script>
+		window.addEventListener('DOMContentLoaded', (event) => {
+			const jwtToken = localStorage.getItem('jwtToken');
+			const userId = localStorage.getItem('userId');
+
+			fetch('http://127.0.0.1:5000/bank/1', {
+				method: 'GET',
+				headers: {
+					'Authorization': `Bearer ${jwtToken}`
+				}
+			})
+			.then(response => {
+				if (!response.ok) {
+					if (response.status == 404) {
+						alert('Bank with bank id 1 not found');
+					} else if (response.status == 401) {
+						handleUnauthorized();
+					}
+					throw new Error('Network response was not ok');
+				}
+				return response.json();
+			})
+			.then(data => {
+				document.getElementById('bankReserve').innerText = `Bank reserve: ${data.reserve}`;
+			})
+			.catch(error => console.error('Error:', error));
+
+			// Fetch loans
+			fetch('http://127.0.0.1:5000/loan', {
+				method: 'GET',
+				headers: {
+					'Authorization': `Bearer ${jwtToken}`
+				}
+			})
+			.then(response => {
+				if (!response.ok) {
+					if (response.status == 401) {
+						handleUnauthorized();
+					}
+					throw new Error('Network response was not ok');
+				}
+				return response.json();
+			})
+			.then(data => {
+				const loansContainer = document.getElementById('loansContainer');
+				data.loans.forEach(loan => {
+					const loanItem = document.createElement('div');
+					loanItem.className = 'loan-item';
+					loanItem.id = `loan${loan.loan_id}`;
+					loanItem.innerHTML = `
+						<p>Loan ID: <a href="C:/microcoin/admin/pay.html">${loan.loan_id}</a></p>
+						<p>Debt: ${loan.debt} Microcoins</p>
+						<p>Date: ${loan.date}</p>
+						<p>User ID: ${loan.user_id}</p>
+					`;
+					loansContainer.appendChild(loanItem);
+				});
+			})
+			.catch(error => console.error('Error:', error));
+		});
+
+		function handleUnauthorized() {
+			localStorage.removeItem('jwtToken');
+			localStorage.removeItem('userId');
+			alert('Session timed out, please log in again');
+			window.location.href = "C:/microcoin/login";
+		}
+	</script>
+</body>
+</html>
